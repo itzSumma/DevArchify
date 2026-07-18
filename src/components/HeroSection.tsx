@@ -7,9 +7,10 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 const images = [
-  "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000",
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000",
-  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1000"
+  "https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1590959651373-a3db0f38a961?q=80&w=1039&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1661963874418-df1110ee39c1?q=80&w=1086&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ];
 
 export default function HeroSection() {
@@ -36,7 +37,7 @@ export default function HeroSection() {
         </p>
 
         {/* Swiper Slider with Border Effect */}
-        <div className="max-w-4xl mx-auto mb-12 p-1 bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl">
+        <div className="max-w-full mx-auto mb-12 p-1 bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl">
           <div className="rounded-[20px] overflow-hidden">
             <Swiper
               modules={[Autoplay, EffectFade]}
@@ -47,7 +48,13 @@ export default function HeroSection() {
             >
               {images.map((img, index) => (
                 <SwiperSlide key={index}>
-                  <img src={img} alt="Banner" className="w-full h-full object-cover" />
+   <img
+  src={img}
+  alt="Banner"
+  className="w-full h-full object-cover select-none"
+  draggable={false}
+  loading="eager"
+/>
                 </SwiperSlide>
               ))}
             </Swiper>

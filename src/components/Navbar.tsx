@@ -27,20 +27,20 @@ export default function Navbar({ isLoggedIn = false }: { isLoggedIn?: boolean })
           {!isLoggedIn ? (
             // Logged-Out Routes (3 Routes)
             <>
-              <Link href="/" className="text-sm font-medium text-white transition-colors hover:text-blue-500">Home</Link>
-              <Link href="/#features" className="text-sm font-medium text-white transition-colors hover:text-blue-500">Features</Link>
-              <Link href="/login" className="text-sm font-medium text-white transition-colors hover:text-blue-500">Login</Link>
+              <Link href="/" className="text-md font-medium text-white transition-colors hover:text-blue-500">Home</Link>
+              <Link href="/#features" className="text-md font-medium text-white transition-colors hover:text-blue-500">Features</Link>
+              <Link href="/login" className="text-md font-medium text-white transition-colors hover:text-blue-500">Login</Link>
             </>
           ) : (
             // Logged-In Routes (5 Routes)
             <>
-              <Link href="/dashboard" className="text-sm font-medium text-white hover:text-blue-500 transition-colors">Dashboard</Link>
-              <Link href="/manage" className="text-sm font-medium text-white hover:text-blue-500 transition-colors">Manage Items</Link>
-              <Link href="/blueprints" className="text-sm font-medium text-white hover:text-blue-500 transition-colors">My Blueprints</Link>
-              <Link href="/chat" className="text-sm font-medium text-blue-500 flex items-center gap-2 hover:text-blue-400">
+              <Link href="/dashboard" className="text-md font-medium text-white hover:text-blue-500 transition-colors">Dashboard</Link>
+              <Link href="/manage" className="text-md font-medium text-white hover:text-blue-500 transition-colors">Manage Items</Link>
+              <Link href="/blueprints" className="text-md font-medium text-white hover:text-blue-500 transition-colors">My Blueprints</Link>
+              <Link href="/chat" className="text-md font-medium text-blue-500 flex items-center gap-2 hover:text-blue-400">
                 <Bot className="size-4" /> AI Chat
               </Link>
-              <Link href="/settings" className="text-sm font-medium text-white hover:text-blue-500 transition-colors">Settings</Link>
+              <Link href="/settings" className="text-md font-medium text-white hover:text-blue-500 transition-colors">Settings</Link>
             </>
           )}
         </div>
