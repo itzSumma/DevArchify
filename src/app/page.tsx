@@ -1,13 +1,16 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection"; // এটি ইম্পোর্ট করুন
-import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import Features from "@/components/Features";
+import HowItWorks from "@/components/HowItWorks";
+import Stats from "@/components/Stats";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main>
-      <Navbar />
       <HeroSection />
-      
+      <Features />
+      <HowItWorks />
+      <Stats/>
+      {/* বাকি সেকশনগুলো এখানে যোগ করুন */}
     </main>
   );
 }
