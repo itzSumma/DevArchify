@@ -18,6 +18,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<AuthUser>;
   register: (name: string, email: string, password: string) => Promise<AuthUser>;
   logout: () => void;
+  setUserFromOAuth: (u: AuthUser, token: string) => void;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -122,8 +123,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     router.push("/");
   }, [router]);
 
+  const setUserFromOAuth = useCallback((u: AuthUser, token: string) => {
+    localStorage.setItem("auth_token", token);
+    localStorage.setItem("auth_user", JSON.stringify(u));
+    setAuthCookie(token);
+    setUser(u);
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ user, isLoading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, isLoading, login, register, logout, setUserFromOAuth }}>
       {children}
     </AuthContext.Provider>
   );

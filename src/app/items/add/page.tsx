@@ -1,11 +1,17 @@
-import type { Metadata } from "next";
-import AddBlueprintForm from "@/components/AddBlueprintForm";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Submit a Blueprint",
-  description: "Share your architecture blueprint with the DevArchify community.",
-};
+import { useEffect } from "react";
+import AddBlueprintForm from "@/components/AddBlueprintForm";
+import RoleCheck from "@/components/RoleCheck";
 
 export default function AddBlueprintPage() {
-  return <AddBlueprintForm />;
+  useEffect(() => {
+    document.title = "Submit a Blueprint | DevArchify";
+  }, []);
+
+  return (
+    <RoleCheck>
+      <AddBlueprintForm />
+    </RoleCheck>
+  );
 }

@@ -1,11 +1,17 @@
-import type { Metadata } from "next";
-import ManageBlueprintTable from "@/components/ManageBlueprintTable";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Manage Blueprints",
-  description: "View, edit, and delete your submitted architecture blueprints.",
-};
+import { useEffect } from "react";
+import ManageBlueprintTable from "@/components/ManageBlueprintTable";
+import RoleCheck from "@/components/RoleCheck";
 
 export default function ManageBlueprintsPage() {
-  return <ManageBlueprintTable />;
+  useEffect(() => {
+    document.title = "Manage Blueprints | DevArchify";
+  }, []);
+
+  return (
+    <RoleCheck>
+      <ManageBlueprintTable />
+    </RoleCheck>
+  );
 }
