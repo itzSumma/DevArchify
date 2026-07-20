@@ -1,15 +1,12 @@
 "use client";
 
-import { authClient } from "@/lib/auth-client";
+import { useAuth } from "@/context/AuthContext";
 import Link from "next/link";
 
 export default function AdminPanel() {
-  const { data: session } = authClient.useSession();
+  const { user } = useAuth();
 
-  // শুধুমাত্র অ্যাডমিনদের জন্য এই প্যানেলটি দেখাবে
-  if (session?.user?.role !== "admin") {
-    return null; // অ্যাডমিন না হলে কিছুই দেখাবে না
-  }
+  if (user?.role !== "admin") return null;
 
   return (
     <div className="p-6 border border-red-500 rounded-2xl bg-red-950/20 my-4">

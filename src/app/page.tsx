@@ -1,16 +1,21 @@
 import HeroSection from "@/components/HeroSection";
 import Features from "@/components/Features";
-import HowItWorks from "@/components/HowItWorks";
+import Services from "@/components/Services";
 import Stats from "@/components/Stats";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import CTA from "@/components/CTA";
 
 export default function HomePage() {
   return (
     <main>
       <HeroSection />
       <Features />
-      <HowItWorks />
-      <Stats/>
-      {/* বাকি সেকশনগুলো এখানে যোগ করুন */}
+      <Services />
+      <Stats />
+      <Testimonials />
+      <FAQ />
+      <CTA />
     </main>
   );
 }
