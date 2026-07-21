@@ -94,7 +94,7 @@ export default function HeroSection() {
           custom={3}
           variants={stagger(0.15)}
         >
-          <Link href="/signup">
+          <Link href="/register">
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
