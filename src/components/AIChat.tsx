@@ -45,7 +45,7 @@ export default function AIChat() {
     setClearing(true);
     try {
       const token = localStorage.getItem("auth_token");
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL;
       await fetch(`${baseUrl}/ai/history`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
@@ -77,7 +77,7 @@ export default function AIChat() {
 
     try {
       const token = localStorage.getItem("auth_token");
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
       const res = await fetch(`${baseUrl}/ai/chat`, {
         method: "POST",
